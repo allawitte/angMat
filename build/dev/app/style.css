@@ -1,0 +1,23 @@
+.side {
+	background: lightblue;
+}
+.content {
+	background: lightgreen;
+}
+.share {
+	 position: absolute;
+    top: 10%;
+    right: 3%;
+}
+md-sidenav {
+       
+        height: 100%;
+        padding: 20px;
+        
+       }
+       
+       md-content{
+           
+           height: 100%;
+           padding: 20px;
+          }

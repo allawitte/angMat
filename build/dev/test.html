@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	 <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="app/style.css">
+</head>
+<body ng-app="appModule" ng-controller="MainCtrl as mc" ng-cloak>
+   
+    
+    <md-toolbar>
+        <h1>Angular Material Starter</h1>
+    </md-toolbar>
+    <div layout="row">
+        <md-sidenav layout="column" class="md-whiteframe-8dp" md-is-locked-open='true'>
+            <md-list>
+                <md-list-item ng-repeat="u in mc.users">
+                    <md-button ng-click="mc.selectUsers(u)">
+                        <md-icon md-svg-src={{u.avatar}} class="avatar">
+                        </md-icon>
+                        {{u.name}}
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-sidenav>
+        <md-content flex layout="column" >
+            <md-icon md-svg-src="{{mc.selected.avatar}}" class="avatar"></md-icon>
+            <h1> {{mc.selected.name}}</h1>
+            <p>{{mc.selected.content}}</p>
+            <md-button class="share" md-no-inc aria-label="Share" ng-click="mc.share(mc.selected.user)">
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
+        </md-content>
+    </div>
+    <script src="libs.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>
